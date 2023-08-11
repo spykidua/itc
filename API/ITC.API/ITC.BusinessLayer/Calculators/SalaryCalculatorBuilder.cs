@@ -12,10 +12,7 @@ namespace ITC.BusinessLayer.Calculators
     {
         private const int MonthInYear = 12;
 
-        public decimal CalculateMonthlyTaxPaid(int salary)
-        {
-            throw new NotImplementedException();
-        }
+        public decimal CalculateMonthlyTaxPaid(decimal annualTax) => annualTax / MonthInYear;
 
         public decimal CalculateAnnualTaxPaid(int salary)
         {
@@ -51,22 +48,13 @@ namespace ITC.BusinessLayer.Calculators
             return annualTaxPaid;
         }
 
+        public decimal CalculateNetMonthlySalary(decimal monthlySalary, decimal monthlyTaxPaid) => monthlySalary - monthlyTaxPaid;
+
+        public decimal CalculateNetAnnualSalary(int annualSalary, decimal annualTaxPaid) => annualSalary - annualTaxPaid;
+
+        public decimal CalculateGrossMonthlySalary(int salary) => salary / MonthInYear;
+
         private decimal CalculatePureTax(int value, int taxPercen) => value * (taxPercen / 100m);
-
-        public decimal CalculateNetMonthlySalary(int salary)
-        {
-            throw new NotImplementedException();
-        }
-
-        public decimal CalculateNetAnnualSalary(int salary)
-        {
-            throw new NotImplementedException();
-        }
-
-        public decimal CalculateGrossMonthlySalary(int salary)
-        {
-            return salary / MonthInYear;
-        }
 
         private List<TaxBandModel> GetTaxBands()
         {

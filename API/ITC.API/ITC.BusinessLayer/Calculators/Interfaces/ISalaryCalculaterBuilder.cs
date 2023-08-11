@@ -2,13 +2,13 @@
 {
     public interface ISalaryCalculatorBuilder
     {
-        public decimal CalculateMonthlyTaxPaid(int salary);
+        public decimal CalculateMonthlyTaxPaid(decimal annualTax);
 
         public decimal CalculateAnnualTaxPaid(int salary);
 
-        public decimal CalculateNetMonthlySalary(int salary);
+        public decimal CalculateNetMonthlySalary(decimal monthlySalary, decimal monthlyTaxPaid);
 
-        public decimal CalculateNetAnnualSalary(int salary);
+        public decimal CalculateNetAnnualSalary(int annualSalary, decimal annualTaxPaid);
 
         public decimal CalculateGrossMonthlySalary(int salary);
     }

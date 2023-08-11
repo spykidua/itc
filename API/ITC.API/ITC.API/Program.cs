@@ -1,3 +1,5 @@
+using ITC.BusinessLayer.DependencyInjection;
+
 namespace ITC.API
 {
     public class Program
@@ -7,6 +9,7 @@ namespace ITC.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddBusinessLayer();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -15,20 +15,21 @@ namespace ITC.BusinessLayer.Managers
 
         public async Task<AnnualSalaryCalculationsModel> CalculateSalaryReportAsync(int salary)
         {
+            var grossAnnualSalary = salary;
+            var grossMonthlySalary = _salaryCalculaterBuilder.CalculateGrossMonthlySalary(salary);
+            var annualTaxPaid = _salaryCalculaterBuilder.CalculateAnnualTaxPaid(salary);
+            var monthlyTaxPaid = _salaryCalculaterBuilder.CalculateMonthlyTaxPaid(annualTaxPaid);
+            var netAnnualSalary = _salaryCalculaterBuilder.CalculateNetAnnualSalary(grossAnnualSalary, annualTaxPaid);
+            var netMonthlySalary = _salaryCalculaterBuilder.CalculateNetMonthlySalary(grossMonthlySalary, monthlyTaxPaid);
 
             return await Task.FromResult(new AnnualSalaryCalculationsModel {
-                GrossAnnualSalary = salary,
-                GrossMonthlySalary = _salaryCalculaterBuilder.CalculateGrossMonthlySalary(salary),
-                NetAnnualSalary = _salaryCalculaterBuilder.CalculateNetAnnualSalary(salary),
-                NetMonthlySalary = _salaryCalculaterBuilder.CalculateNetMonthlySalary(salary),
-                AnnualTaxPaid = _salaryCalculaterBuilder.CalculateAnnualTaxPaid(salary),
-                MonthlyTaxPaid = _salaryCalculaterBuilder.CalculateMonthlyTaxPaid(salary)
+                GrossAnnualSalary = grossAnnualSalary,
+                GrossMonthlySalary = grossMonthlySalary,
+                NetAnnualSalary = netAnnualSalary,
+                NetMonthlySalary = netMonthlySalary,
+                AnnualTaxPaid = annualTaxPaid,
+                MonthlyTaxPaid = monthlyTaxPaid
             });
-        }
-
-        private object FindTaxBandForSallary(int salary)
-        {
-            throw new NotImplementedException();
         }
     }
 }
