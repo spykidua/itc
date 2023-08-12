@@ -16,7 +16,7 @@ namespace ITC.API.Controllers
             _salaryManager = salaryManager;
         }
 
-        [HttpPost("salary/{salary}/calculate-report")]
+        [HttpGet("salary/{salary}/calculate-report")]
         public async Task<IActionResult> GetAsync(int salary)
         {
             var salaryReport = await _salaryManager.CalculateSalaryReportAsync(salary);

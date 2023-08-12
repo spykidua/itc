@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="salary-input">
+        <form *ngIf="formGroup" class="row g-3" [formGroup]="formGroup">
+            <div class="col-auto">
+                <p>Gross Annual Salary:</p>
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" name="salary" formControlName="salary">
+                <label for="salary"></label>
+            </div>
+            <div class="col-auto">
+                <div title="{{ getSubmitBlockReasone() }}">
+                    <button type="button" class="btn btn-primary mb-3" [disabled]="!formGroup.dirty || !formGroup.valid"
+                        (click)="submit()">Calc</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="calculationResult" class="calculation-result">
+        <table>
+            <tr>
+                <td>Gross Annual Salary:</td>
+                <td>{{ calculationResult.grossAnnualSalary | poundMoney: 2 }}</td>
+            </tr>
+            <tr>
+                <td>Gross Monthly Salary:</td>
+                <td>{{ calculationResult.grossMonthlySalary | poundMoney: 2 }}</td>
+            </tr>
+            <tr>
+                <td>Net Annual Salary:</td>
+                <td>{{ calculationResult.netAnnualSalary | poundMoney: 2 }}</td>
+            </tr>
+            <tr>
+                <td>Net Monthly Salary: </td>
+                <td>{{ calculationResult.netMonthlySalary | poundMoney: 2 }}</td>
+            </tr>
+            <tr>
+                <td>Annual Tax Paid:</td>
+                <td>{{ calculationResult.annualTaxPaid | poundMoney: 2 }}</td>
+            </tr>
+            <tr>
+                <td>Monthly Tax Paid: </td>
+                <td>{{ calculationResult.monthlyTaxPaid | poundMoney: 2 }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
