@@ -1,4 +1,5 @@
 using ITC.BusinessLayer.DependencyInjection;
+using ITC.DataAccess.DependencyInjection;
 
 namespace ITC.API
 {
@@ -7,8 +8,9 @@ namespace ITC.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            var connectionString = builder.Configuration.GetSection("ConnectionStrings:DefaultConnection");
             // Add services to the container.
+            builder.Services.AddDataAccess(connectionString.Value);
             builder.Services.AddBusinessLayer();
 
             builder.Services.AddControllers();
