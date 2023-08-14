@@ -8,7 +8,6 @@ namespace ITC.DataAccess
     {
         private const string ConnectionStringName = "DefaultConnection";
         private const string EnvironmentVariableName = "ASPNETCORE_ENVIRONMENT";
-        private const string LocalConnectionString = "Server=.;Database=income-tax-db;Trusted_Connection=True;";
 
         public IncomeTaxDbContext CreateDbContext(string[] args)
         {
