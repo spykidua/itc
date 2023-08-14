@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
 using ITC.DataAccess.Interfaces.Repositories;
 using ITC.DataAccess.Repositories;
+using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
 
 namespace ITC.DataAccess
 {
