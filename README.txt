@@ -27,4 +27,5 @@ To run API use following commands:
   - Select ITC.API project as StartUp
   - click on 'Start Debugging' button
 
+  - I cover code by unit test just for critical components, I do such for my PET-projects and for projects which we create from scratch and can discuss unit test creation process.
   - Data consistency validation can be implemented using patterns like Pipeline or something like this, but I decided use plaint solution
