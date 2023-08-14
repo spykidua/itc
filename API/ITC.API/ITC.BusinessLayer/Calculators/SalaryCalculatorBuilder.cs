@@ -1,10 +1,5 @@
 ﻿using ITC.BusinessLayer.Calculators.Interfaces;
-using ITC.BusinessLayer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ITC.DataAccess.Entities;
 
 namespace ITC.BusinessLayer.Calculators
 {
@@ -14,10 +9,8 @@ namespace ITC.BusinessLayer.Calculators
 
         public decimal CalculateMonthlyTaxPaid(decimal annualTax) => annualTax / MonthInYear;
 
-        public decimal CalculateAnnualTaxPaid(int salary)
+        public decimal CalculateAnnualTaxPaid(int salary, ICollection<TaxBand> taxBands)
         {
-            var taxBands = GetTaxBands().OrderBy(x => x.LowerLimit);
-
             decimal annualTaxPaid = 0m;
             var unprocessedSalaryBalance = salary;
 
@@ -56,28 +49,28 @@ namespace ITC.BusinessLayer.Calculators
 
         private decimal CalculatePureTax(int value, int taxPercen) => value * (taxPercen / 100m);
 
-        private List<TaxBandModel> GetTaxBands()
-        {
-            return new List<TaxBandModel> {
-             new TaxBandModel {
-                Name = "Band 1",
-                UpperLimit = 5000,
-                LowerLimit = 0,
-                Rate = 0
-             },
-             new TaxBandModel {
-                Name = "Band 2",
-                UpperLimit = 20000,
-                LowerLimit = 5000,
-                Rate = 20
-             },
-             new TaxBandModel {
-                Name = "Band 3",
-                UpperLimit = default(int?),
-                LowerLimit = 20000,
-                Rate = 40
-             }
-            };
-        }
+        //private List<TaxBandModel> GetTaxBands()
+        //{
+        //    return new List<TaxBandModel> {
+        //     new TaxBandModel {
+        //        Name = "Band 1",
+        //        UpperLimit = 5000,
+        //        LowerLimit = 0,
+        //        Rate = 0
+        //     },
+        //     new TaxBandModel {
+        //        Name = "Band 2",
+        //        UpperLimit = 20000,
+        //        LowerLimit = 5000,
+        //        Rate = 20
+        //     },
+        //     new TaxBandModel {
+        //        Name = "Band 3",
+        //        UpperLimit = default(int?),
+        //        LowerLimit = 20000,
+        //        Rate = 40
+        //     }
+        //    };
+        //}
     }
 }

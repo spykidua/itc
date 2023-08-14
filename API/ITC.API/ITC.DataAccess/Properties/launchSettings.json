@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ITC.DataAccess": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      }
+    }
+  }
+}

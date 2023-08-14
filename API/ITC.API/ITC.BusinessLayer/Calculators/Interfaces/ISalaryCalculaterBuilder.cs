@@ -1,10 +1,13 @@
-﻿namespace ITC.BusinessLayer.Calculators.Interfaces
+﻿using ITC.BusinessLayer.Models;
+using ITC.DataAccess.Entities;
+
+namespace ITC.BusinessLayer.Calculators.Interfaces
 {
     public interface ISalaryCalculatorBuilder
     {
         public decimal CalculateMonthlyTaxPaid(decimal annualTax);
 
-        public decimal CalculateAnnualTaxPaid(int salary);
+        public decimal CalculateAnnualTaxPaid(int salary, ICollection<TaxBand> taxBands);
 
         public decimal CalculateNetMonthlySalary(decimal monthlySalary, decimal monthlyTaxPaid);
 
