@@ -40,3 +40,4 @@ obj/
 #PyCharm
 .idea/
 .gtm/
+*.bak

@@ -1,6 +1,7 @@
 ﻿using ITC.BusinessLayer.Calculators;
 using ITC.BusinessLayer.Calculators.Interfaces;
 using ITC.DataAccess.Entities;
+using System.Collections.Generic;
 using Xunit;
 
 namespace ITC.BusinessLayer.Tests.Calculators

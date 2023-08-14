@@ -1,4 +1,5 @@
 ﻿using ITC.DataAccess.Entities;
+using System.Collections.Generic;
 
 namespace ITC.BusinessLayer.Calculators.Interfaces
 {

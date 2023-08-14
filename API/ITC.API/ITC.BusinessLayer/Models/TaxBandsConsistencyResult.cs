@@ -1,4 +1,6 @@
-﻿namespace ITC.BusinessLayer.Models
+﻿using System.Collections.Generic;
+
+namespace ITC.BusinessLayer.Models
 {
     public class TaxBandsConsistencyResult
     {

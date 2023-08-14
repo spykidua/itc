@@ -1,4 +1,6 @@
-﻿namespace ITC.DataAccess.Entities
+﻿using System;
+
+namespace ITC.DataAccess.Entities
 {
     public abstract class BaseEntity
     {
