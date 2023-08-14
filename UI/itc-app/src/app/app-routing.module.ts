@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IncomeTaxcalculatorComponent } from './income-tax-calculator/income-tax-calculator.component';
+import { TaxBandListComponent } from './tax-band-list/tax-band-list.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,14 +13,14 @@ const routes: Routes = [{
     },
     {
       path: 'income-tax-calculator',
-      loadChildren: () => import('./income-tax-calculator/income-tax-calculator-routing.module').then(m => m.IncomeTaxCalculatorRoutingModule)
+      component: IncomeTaxcalculatorComponent
+    },
+    {
+      path: 'tax-band-list',
+      component: TaxBandListComponent
     }
   ]
 },
-// {
-//   path: 'forbidden',
-//   loadChildren: () => import('./forbidden-page/forbidden-page.module').then(m => m.ForbiddenPageModule)
-// },
 {
   path: '**',
   redirectTo: ''

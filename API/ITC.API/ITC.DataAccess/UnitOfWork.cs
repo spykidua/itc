@@ -2,11 +2,6 @@
 using ITC.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ITC.DataAccess.Interfaces.Repositories;
 using ITC.DataAccess.Repositories;
 

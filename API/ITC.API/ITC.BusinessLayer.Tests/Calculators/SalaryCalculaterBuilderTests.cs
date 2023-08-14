@@ -1,5 +1,4 @@
-﻿using FakeItEasy;
-using ITC.BusinessLayer.Calculators;
+﻿using ITC.BusinessLayer.Calculators;
 using ITC.BusinessLayer.Calculators.Interfaces;
 using ITC.DataAccess.Entities;
 using Xunit;
@@ -8,11 +7,11 @@ namespace ITC.BusinessLayer.Tests.Calculators
 {
     public class SalaryCalculatorBuilderTests
     {
-        private readonly ISalaryCalculatorBuilder _sut; // sut - System under test
+        private readonly ISalaryCalculator _sut; // sut - System under test
 
         public SalaryCalculatorBuilderTests()
         {
-            _sut = new SalaryCalculatorBuilder();
+            _sut = new SalaryCalculator();
         }
 
         [Theory]

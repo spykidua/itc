@@ -1,5 +1,4 @@
 ﻿using ITC.DataAccess.Interfaces;
-using ITC.DataAccess.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

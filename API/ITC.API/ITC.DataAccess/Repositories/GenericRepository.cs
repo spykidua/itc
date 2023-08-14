@@ -2,8 +2,6 @@
 using ITC.DataAccess.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITC.DataAccess.Repositories
 {
@@ -18,7 +16,7 @@ namespace ITC.DataAccess.Repositories
 
         private DbSet<TEntity> DbSet => Context.Set<TEntity>();
 
-        public async Task<ICollection<TEntity>> GetAsync(
+        public async Task<IEnumerable<TEntity>> GetAsync(
             Expression<Func<TEntity, bool>> filter = null,
             Expression<Func<TEntity, object>> sorter = null,
             bool sortDescending = false,

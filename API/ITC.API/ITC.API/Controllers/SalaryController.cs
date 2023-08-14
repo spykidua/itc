@@ -1,6 +1,4 @@
 ﻿using ITC.BusinessLayer.Managers.Interfaces;
-using ITC.BusinessLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITC.API.Controllers

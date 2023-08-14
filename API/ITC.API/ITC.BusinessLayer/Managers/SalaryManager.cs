@@ -9,10 +9,10 @@ namespace ITC.BusinessLayer.Managers
 {
     public class SalaryManager : ISalaryManager
     {
-        private readonly ISalaryCalculatorBuilder _salaryCalculaterBuilder;
+        private readonly ISalaryCalculator _salaryCalculaterBuilder;
         private readonly IGenericRepository<TaxBand> _taxBandRepository;
 
-        public SalaryManager(ISalaryCalculatorBuilder salaryCalculatorBuilder, IUnitOfWork uow)
+        public SalaryManager(ISalaryCalculator salaryCalculatorBuilder, IUnitOfWork uow)
         {
             _salaryCalculaterBuilder = salaryCalculatorBuilder;
             _taxBandRepository = uow.GetRepository<TaxBand>();

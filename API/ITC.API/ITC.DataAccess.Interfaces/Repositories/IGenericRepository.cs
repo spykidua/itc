@@ -7,7 +7,7 @@ namespace ITC.DataAccess.Interfaces.Repositories
     {
         Task<TEntity> GetByIdAsync(Guid id);
 
-        Task<ICollection<TEntity>> GetAsync(
+        Task<IEnumerable<TEntity>> GetAsync(
             Expression<Func<TEntity, bool>> filter = null,
             Expression<Func<TEntity, object>> sorter = null,
             bool sortDescending = false,

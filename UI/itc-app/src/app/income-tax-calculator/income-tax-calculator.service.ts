@@ -6,9 +6,9 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
-  })
+})
 export class IncomeTaxCalculatorService {
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient) { }
 
     public getTaxCalculations(salary: number): Observable<CalculationResult> {
         return this.http.get<CalculationResult>(environment.api.url + `/api/salary/${salary}/calculate-report`);
