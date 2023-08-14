@@ -6,13 +6,7 @@ using ITC.BusinessLayer.MappingProfiles;
 using ITC.DataAccess.Entities;
 using ITC.DataAccess.Interfaces;
 using ITC.DataAccess.Interfaces.Repositories;
-using ITC.DataAccess.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace ITC.BusinessLayer.Tests.Managers
