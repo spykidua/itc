@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CalculationResult } from './calculation-result.model';
 import { IncomeTaxCalculatorService } from './income-tax-calculator.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -58,6 +58,6 @@ export class IncomeTaxcalculatorComponent implements OnInit {
       errors.push('Salary wasn\'t input or value haven\'t changed since previouse request');
     }
 
-    return errors.join('\r\n');;
+    return errors.join('\r\n');
   }
 }
