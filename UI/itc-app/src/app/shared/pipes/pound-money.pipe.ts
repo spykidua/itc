@@ -8,7 +8,7 @@ import {
   export class PoundMoneyPipe implements PipeTransform {
     constructor(private decimalPipe: DecimalPipe) {}
   
-    transform(value: number, decimals: number) {
+    transform(value: number | undefined, decimals: number) {
         if (!value && value !== 0) {
             return '-';
           }
