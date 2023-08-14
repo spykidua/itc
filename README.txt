@@ -12,6 +12,8 @@ To run UI use following commands:
   - Run a dev server: ng serve - if you have locally deployed backend server (port 7198)
   - Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+
+NOTES:
   - For simulation of server slow responce I've added setTimeOut for some components
   - Tax Band consistancy moved to separate page, managing don't implemented
 
@@ -27,5 +29,6 @@ To run API use following commands:
   - Select ITC.API project as StartUp
   - click on 'Start Debugging' button
 
+NOTES:
   - I cover code by unit test just for critical components, I do such for my PET-projects and for projects which we create from scratch and can discuss unit test creation process.
   - Data consistency validation can be implemented using patterns like Pipeline or something like this, but I decided use plaint solution
