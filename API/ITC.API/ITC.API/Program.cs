@@ -22,7 +22,7 @@ namespace ITC.API
             var app = builder.Build();
 
 
-            if (app.Environment.IsDevelopment())
+            if (app.Environment.IsEnvironment("Local"))
             {
                 app.UseCors(config => config
                     .WithOrigins("http://localhost:4200")
