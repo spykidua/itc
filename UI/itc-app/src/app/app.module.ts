@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { DecimalPipe } from '@angular/common';
 import { TaxBandListComponent } from './tax-band-list/tax-band-list.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TaxBandListComponent } from './tax-band-list/tax-band-list.component';
     ReactiveFormsModule,
     SharedModule,
     HttpClientModule,
-    DecimalPipe
+    DecimalPipe,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

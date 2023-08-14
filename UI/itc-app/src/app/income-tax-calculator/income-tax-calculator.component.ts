@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CalculationResult } from './calculation-result.model';
 import { IncomeTaxCalculatorService } from './income-tax-calculator.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-income-tax-calculator',
@@ -11,10 +12,12 @@ import { IncomeTaxCalculatorService } from './income-tax-calculator.service';
 export class IncomeTaxcalculatorComponent implements OnInit {
   public formGroup!: FormGroup;
   public calculationResult!: CalculationResult;
+  public resultSpinnerName = "result-spinner";
 
   constructor(
     private taxCalculatorService: IncomeTaxCalculatorService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private spinner: NgxSpinnerService
   ) { }
 
   public ngOnInit(): void {
@@ -27,9 +30,11 @@ export class IncomeTaxcalculatorComponent implements OnInit {
   }
 
   public submit() {
+    this.spinner.show(this.resultSpinnerName);
     this.taxCalculatorService.getTaxCalculations(this.formGroup.value.salary).subscribe(x => {
       this.calculationResult = x;
       this.formGroup.reset(this.formGroup.value);
+      setTimeout(() => this.spinner.hide(this.resultSpinnerName), 2000);
     });
   }
 

@@ -1,30 +1,40 @@
 <div class="container">
-    <div *ngIf="consistencyCheck" class="check-consistency">
-        <p>Tax bands data consistency: <i [ngClass]="!!consistencyCheck && consistencyCheck.isConsistent  ? 'icon-checkmark' : 'icon-cross'"></i> </p>
-        <div *ngIf="consistencyCheck && !consistencyCheck.isConsistent" class="errors">
-            <ul class="error-message" >
-                <li *ngFor="let message of consistencyCheck?.checkResultMessages">{{ message }}</li>
-            </ul>
+    <div class="check-consistency">
+        <ngx-spinner [name]="checkSpinnerName" [fullScreen]="false" type="square-jelly-box"
+            size="medium">
+        </ngx-spinner>
+        <div *ngIf="consistencyCheck">
+            <p>Tax bands data consistency: <i
+                    [ngClass]="!!consistencyCheck && consistencyCheck.isConsistent  ? 'icon-checkmark' : 'icon-cross'"></i>
+            </p>
+            <div *ngIf="consistencyCheck && !consistencyCheck.isConsistent" class="errors">
+                <ul class="error-message">
+                    <li *ngFor="let message of consistencyCheck?.checkResultMessages">{{ message }}</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div *ngIf="taxBands" class="tax-bands">
-        <table class="table table-sm table-striped">
+    <div class="tax-bands">
+        <ngx-spinner [name]="bandsSpinnerName" [fullScreen]="false" type="square-jelly-box"
+            size="medium">
+        </ngx-spinner>
+        <table *ngIf="!!taxBands" class="table table-sm table-striped">
             <thead class="table-dark">
-            <tr>
-              <th scope="col">Band Name</th>
-              <th scope="col">Lower Limit</th>
-              <th scope="col">Upper Limit</th>
-              <th scope="col">Rate, %</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let band of taxBands">
-                <td>{{ band.name }}</td>
-                <td>{{ band.lowerLimit | poundMoney: 2 }}</td>
-                <td>{{ band.upperLimit| poundMoney: 2 }}</td>
-                <td>{{ band.rate }}</td>
-            </tr>
-        </tbody>
+                <tr>
+                    <th scope="col">Band Name</th>
+                    <th scope="col">Lower Limit</th>
+                    <th scope="col">Upper Limit</th>
+                    <th scope="col">Rate, %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let band of taxBands">
+                    <td>{{ band.name }}</td>
+                    <td>{{ band.lowerLimit | poundMoney: 2 }}</td>
+                    <td>{{ band.upperLimit| poundMoney: 2 }}</td>
+                    <td>{{ band.rate }}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

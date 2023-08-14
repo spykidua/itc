@@ -16,8 +16,10 @@
             </div>
         </form>
     </div>
-    <div *ngIf="calculationResult" class="calculation-result">
-        <table>
+    <div class="calculation-result">
+        <ngx-spinner [name]="resultSpinnerName" [fullScreen]="false" type="square-jelly-box" size="medium">
+        </ngx-spinner>
+        <table *ngIf="calculationResult">
             <tr>
                 <td>Gross Annual Salary:</td>
                 <td>{{ calculationResult.grossAnnualSalary | poundMoney: 2 }}</td>

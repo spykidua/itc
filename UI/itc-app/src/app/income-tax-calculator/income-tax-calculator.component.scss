@@ -10,6 +10,8 @@
 }
 
 .calculation-result {
+    position: relative;
+    min-height: 4rem;
     table {
         td {
             height: 1.5rem;
